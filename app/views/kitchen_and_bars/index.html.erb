@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kitchen And Bars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kitchen_and_bars.each do |kitchen_and_bar| %>
+      <tr>
+        <td><%= link_to 'Show', kitchen_and_bar %></td>
+        <td><%= link_to 'Edit', edit_kitchen_and_bar_path(kitchen_and_bar) %></td>
+        <td><%= link_to 'Destroy', kitchen_and_bar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kitchen and bar', new_kitchen_and_bar_path %>

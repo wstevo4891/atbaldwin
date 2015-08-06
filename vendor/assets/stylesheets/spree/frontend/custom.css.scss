@@ -1,0 +1,101 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#spree-header {
+  background: white;
+  background-size: cover;
+  margin-bottom: $line-height-computed;
+
+  #header {
+    background: white;
+    padding: $line-height-computed 0;
+  }
+
+  #logo {
+    margin-bottom: 10px;
+
+    img {
+      width: 306px;
+    }
+  }
+
+  .nav a {
+    color: #949494;
+    font-family: "Century Gothic";
+    font-size: 1.2em;
+
+    &:hover, &:focus {
+      background: rgba($gray-darker, 0.4);
+    }
+  }
+
+  .navbar {
+    border: 0;
+    margin-bottom: 0;
+  }
+}
+
+#mainnav {
+  width: auto;
+  height: 2em;
+  margin-bottom: 1em;
+  margin-left: -6em;
+  margin-right: -5em;
+  li {
+    font-size: 1.4em;
+    float: left;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 400;
+    list-style-type: none;
+  }
+  a {
+    display: block;
+    margin-left: 2em;
+    margin-right: 2em;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: #949494;
+    font-family: "Century Gothic";
+    height: 1.6em;
+  }
+  a:hover {
+    background: white;
+    text-decoration: underline;
+  }  
+}
+
+.dropdown-menu {
+  width: 80%;
+  height: 30em;
+  position: fixed;
+  top: 17em;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.dropdown-header {
+  margin-left: -1em;
+  font-weight: bold;
+}
+
+.nav-categories {
+  margin-top: 0.5em;
+  li {
+    float: left;
+    display: block;
+    clear: left;
+    margin-bottom: 0.5em;
+  }
+  a {
+    font-size: 0.8em;
+  }
+}
+
+.bold {
+  a {
+    font-weight: bold;
+  }
+}
+
+
