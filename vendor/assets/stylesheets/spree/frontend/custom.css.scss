@@ -4,7 +4,8 @@
 #spree-header {
   background: white;
   background-size: cover;
-  margin-bottom: $line-height-computed;
+  border-bottom: solid 1px #949494;
+  margin: 0;
 
   #header {
     background: white;
@@ -12,10 +13,8 @@
   }
 
   #logo {
-    margin-bottom: 10px;
-
     img {
-      width: 306px;
+      width: 15em;
     }
   }
 
@@ -32,6 +31,12 @@
   .navbar {
     border: 0;
     margin-bottom: 0;
+  }
+}
+
+#nav-bar {
+  li {
+    display: inline-block;
   }
 }
 
@@ -69,7 +74,7 @@
   width: 80%;
   height: 30em;
   position: fixed;
-  top: 17em;
+  top: 13.7em;
   margin-right: 10%;
   margin-left: 10%;
 }
@@ -96,6 +101,143 @@
   a {
     font-weight: bold;
   }
+}
+
+#main {
+  width: 100%;
+  background: white;
+  height: auto;
+}
+
+/* Homepage */
+
+body.page-id-home #home-container {
+  display: none;
+}
+
+#home-image {
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 34em;
+  }
+}
+
+#homePage {
+  background: #f8f8f8;
+  width: 100%;
+  height: auto;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  p {
+    font-size: 1.3em;
+    padding-top: 1em;
+  }
+}
+
+#hp-contain {
+  width: 75em;
+  margin: 0 auto;
+  height: auto;
+}
+
+.box {
+  width: 23em;
+  height: 28em;
+  margin: 0.7em;
+  img {
+    width: 23em;
+    height: 22em;
+  }
+}
+
+.box2 {
+  width: 72em;
+  height: 28em;
+  margin: 0.7em;
+  img {
+    width: 72em;
+    height: 28em;
+  }
+}
+
+.productTag {
+  height: 6em;
+  width: 23em;
+  background: #FCBD53;
+  text-align: center;
+}
+
+.tagCopy1 {
+  font-size: 2.5em;
+  margin: 0 auto;
+  padding-top: 0.2em;
+}
+
+.tagCopy2 {
+  margin-top: -0.7em;
+}
+
+.font-1 {
+  font-family: "Bodoni";
+}
+
+.font-2 {
+  font-family: "Century Gothic"
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  height: 25em;
+  border-top: 1px solid #949494;
+  background: white;
+  clear: both;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #4D4D4D;
+  p {
+    font-family: "Century Gothic";
+  }
+}
+
+.footer-contact-1 {
+  width: 5em;
+  margin-top: 0.5em;
+  margin-left: 3em;
+  float: left;
+  display: inline-block;
+  text-align: right;
+}
+
+.footer-contact-2 {
+  width: 13em;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  padding-right: 2em;
+  float: left;
+  display: inline-block;
+  border-right: solid 1px #949494;
+}
+
+#map-canvas {
+  width: 400px;
+  height: 300px;
+  background-color: #CCC; 
+  float: right;
+  margin-bottom: 2em;
+  display: inline-block;
+}
+
+#copyright {
+  width: 100%;
+  height: 4em;
+  padding-top: 1em;
+  background-color: white;
+  border-top: 1px solid #949494;
+  text-align: center;
+  clear: both;
 }
 
 

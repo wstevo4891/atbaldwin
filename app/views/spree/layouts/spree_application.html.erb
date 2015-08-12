@@ -11,19 +11,34 @@
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header' %>
 
-    <div class="container">
-      <div class="row" data-hook>
-        <%= breadcrumbs(@taxon) %>
-
-        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
-
-        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
-          <%= flash_messages %>
+    <% if @home_page %>
+      <div class="row">
+        <div id="main">
+          <%= flash messages %>
           <%= yield %>
         </div>
-
-        <%= yield :templates %>
       </div>
+    
+    <% else %>
+      <div id="home-container">
+        <div class="row" data-hook>
+          <%= breadcrumbs(@taxon) %>
+
+          <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+
+          <%= yield :templates %>
+        </div>
+      </div>
+    <% end %>
+    
+    <div class="row">
+      <%= render 'spree/shared/footer' %>
     </div>
+    
   </body>
 </html>
