@@ -1,3 +1,5 @@
+<% @body_id = 'home-page' %>
+
 <div class="row">
   <div id="home-image" class="col-md-12">
     <%= render partial: 'spree/shared/slider', locals: { slider: Spree::Slide.published, cid: 'home', interval: false } %>
@@ -23,16 +25,16 @@
   	  	  </div>  	  	
   	    </div>
   	    <div class="box col-md-4">
-          <%= image_tag("bridal_registry.jpg") %>
+          <a href="/bridal_registries/new"><%= image_tag("bridal_registry.jpg") %></a>
   	  	  <div class="productTag">
   	  	  	<h3 class="font-1 tagCopy1">Bridal Registry</h3>
-  	  	    <p class="font-2 tagCopy2">Register Today!</p>
+  	  	    <p class="font-2 tagCopy2">Start your wishlist!</p>
   	  	  </div>  	  	
   	    </div>
       </div>  
       <div class="row">
       	<div class="col-md-9 box2">
-      		<%= image_tag("fish-rug.jpg") %>
+          <%= image_tag("fish-rug.jpg") %>
       	</div>
       </div>	
     </div>

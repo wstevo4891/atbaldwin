@@ -11,7 +11,7 @@
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header' %>
 
-    <% if @home_page %>
+    <% if :body_id == 'home-page' %>
       <div class="row">
         <div id="main">
           <%= flash messages %>
@@ -20,7 +20,7 @@
       </div>
     
     <% else %>
-      <div id="home-container">
+      <div id="main">
         <div class="row" data-hook>
           <%= breadcrumbs(@taxon) %>
 

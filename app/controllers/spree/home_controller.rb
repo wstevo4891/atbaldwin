@@ -9,8 +9,5 @@ module Spree
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
     
-    def homeView
-      @home_page = true
-    end
   end
 end

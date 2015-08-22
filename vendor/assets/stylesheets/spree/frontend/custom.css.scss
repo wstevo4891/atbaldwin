@@ -40,6 +40,15 @@
   }
 }
 
+#login-bar {
+  float: left;
+  max-width: 8em;
+  a {
+    display: block;
+    margin-top: 0.7em;
+  }
+}
+
 #mainnav {
   width: auto;
   height: 2em;
@@ -107,13 +116,10 @@
   width: 100%;
   background: white;
   height: auto;
+  padding-bottom: 3em;
 }
 
 /* Homepage */
-
-body.page-id-home #home-container {
-  display: none;
-}
 
 #home-image {
   overflow: hidden;
@@ -186,6 +192,56 @@ body.page-id-home #home-container {
   font-family: "Century Gothic"
 }
 
+/* Sidebar */
+
+#sidebar {
+  margin-left: 2em;
+  width: 18em;
+}
+
+
+/* Product Display */
+
+.product-list-item {
+  margin-right: 4em;
+}
+
+.panel {
+  width: 17em;
+  height: auto;
+  .panel-body {
+    padding: 0;
+    width: 17em;
+    height: auto;
+  }
+  img {
+    width: 16.8em;
+    height: 16.8em;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    float: left;
+  }
+}
+
+.panel-footer {
+  height: auto;
+  a {
+    display: block;
+  }
+}
+
+#main-image {
+  margin-top: 2em;
+  margin-left: 5em;
+}
+
+/* Bridal Registry */
+
+#bridal-registry-form {
+  margin-top: 5px;
+}
+
+
 /* Footer */
 
 footer {
@@ -213,12 +269,33 @@ footer {
 
 .footer-contact-2 {
   width: 13em;
+  height: 13em;
   margin-top: 0.5em;
   margin-left: 2em;
-  padding-right: 2em;
+  padding-right: 1em;
   float: left;
   display: inline-block;
   border-right: solid 1px #949494;
+}
+
+.social-media {
+  width: 40em;
+  margin-left: 3em;
+  float: left;
+  clear: left;
+  border-top: solid 1px #949494;
+  padding-top: 2em;
+  img {
+    width: 5em;
+  }
+}
+
+.footer-about {
+  width: 20em;
+  text-align: center;
+  float: left;
+  display: inline-block;
+  margin-top: 0.5em;
 }
 
 #map-canvas {
@@ -239,5 +316,11 @@ footer {
   text-align: center;
   clear: both;
 }
+
+
+
+
+
+
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805192664) do
+ActiveRecord::Schema.define(version: 20150822013557) do
 
   create_table "accessories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -109,6 +109,28 @@ ActiveRecord::Schema.define(version: 20150805192664) do
 
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+
+  create_table "spree_bridal_products", force: :cascade do |t|
+    t.integer  "variant_id"
+    t.integer  "bridal_registry_id"
+    t.text     "remark"
+    t.integer  "quantity",           default: 1, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "spree_bridal_registries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "access_hash"
+    t.boolean  "is_private",  default: true,  null: false
+    t.boolean  "is_default",  default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "spree_bridal_registries", ["user_id", "is_default"], name: "index_spree_bridal_registries_on_user_id_and_is_default"
+  add_index "spree_bridal_registries", ["user_id"], name: "index_spree_bridal_registries_on_user_id"
 
   create_table "spree_calculators", force: :cascade do |t|
     t.string   "type"
@@ -570,7 +592,7 @@ ActiveRecord::Schema.define(version: 20150805192664) do
 
   create_table "spree_properties", force: :cascade do |t|
     t.string   "name"
-    t.string   "presentation"
+    t.string   "presentation", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -956,7 +978,7 @@ ActiveRecord::Schema.define(version: 20150805192664) do
   add_index "spree_tax_rates", ["zone_id"], name: "index_spree_tax_rates_on_zone_id"
 
   create_table "spree_taxonomies", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",                   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "position",   default: 0
@@ -967,7 +989,7 @@ ActiveRecord::Schema.define(version: 20150805192664) do
   create_table "spree_taxons", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "position",          default: 0
-    t.string   "name"
+    t.string   "name",                          null: false
     t.string   "permalink"
     t.integer  "taxonomy_id"
     t.integer  "lft"
@@ -1063,6 +1085,31 @@ ActiveRecord::Schema.define(version: 20150805192664) do
   add_index "spree_variants", ["sku"], name: "index_spree_variants_on_sku"
   add_index "spree_variants", ["tax_category_id"], name: "index_spree_variants_on_tax_category_id"
   add_index "spree_variants", ["track_inventory"], name: "index_spree_variants_on_track_inventory"
+
+  create_table "spree_wished_products", force: :cascade do |t|
+    t.integer  "variant_id"
+    t.integer  "wishlist_id"
+    t.text     "remark"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "quantity",           default: 1, null: false
+    t.integer  "bridal_registry_id"
+  end
+
+  add_index "spree_wished_products", ["bridal_registry_id"], name: "index_spree_wished_products_on_bridal_registry_id"
+
+  create_table "spree_wishlists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "access_hash"
+    t.boolean  "is_private",  default: true,  null: false
+    t.boolean  "is_default",  default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "spree_wishlists", ["user_id", "is_default"], name: "index_spree_wishlists_on_user_id_and_is_default"
+  add_index "spree_wishlists", ["user_id"], name: "index_spree_wishlists_on_user_id"
 
   create_table "spree_zone_members", force: :cascade do |t|
     t.integer  "zoneable_id"
