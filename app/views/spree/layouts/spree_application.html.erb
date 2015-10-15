@@ -8,25 +8,36 @@
     <%= render partial: 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <%= render partial: 'spree/shared/google_analytics.js' %>
-    <%= render partial: 'spree/shared/header' %>
+    <div id="pushobj">
+      <%= render partial: 'spree/shared/google_analytics.js' %>
+      <%= render partial: 'spree/shared/header' %>
+      
+      <div class="toggledDiv hidden-lg">
+      	<% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
 
-    <% if :body_id == 'home-page' %>
-      <div class="row">
-        <div id="main">
-          <%= flash messages %>
-          <%= yield %>
-        </div>
+        <%= form_tag spree.products_path, :method => :get, class: "navbar-form" do %>
+          <div id="mobile-search-categories" class="form-group">
+            <% cache(cache_key_for_taxons) do %>
+              <%= select_tag :taxon,
+                options_for_select([[Spree.t(:all_departments), '']] +
+                @taxons.map {|t| [t.name, t.id]}, @taxon ? @taxon.id : params[:taxon]),
+                 'aria-label' => 'Taxon', class: "form-control" %>
+            <% end %>
+          </div>
+          <div id="mobile-search-bar" class="form-group">
+            <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control" %>
+          </div>
+          <%= submit_tag Spree.t(:search), :name => nil, class: "btn btn-success mobile-search-button" %>
+        <% end %>
       </div>
-    
-    <% else %>
+
       <div id="main">
         <div class="row" data-hook>
           <%= breadcrumbs(@taxon) %>
 
           <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
-          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-md-8 col-lg-9" %>" data-hook>
             <%= flash_messages %>
             <%= yield %>
           </div>
@@ -34,11 +45,40 @@
           <%= yield :templates %>
         </div>
       </div>
-    <% end %>
     
-    <div class="row">
-      <%= render 'spree/shared/footer' %>
+      <div class="row hidden-xs hidden-sm">
+        <%= render 'spree/shared/footer' %>
+      </div>
+      <div class="row hidden-md hidden-lg">
+        <%= render 'spree/shared/mobile_footer' %>
+      </div>
+    
     </div>
+    
+    <%= render partial: 'spree/shared/mobile_menu' %>
+    
+    <script>
+      $(document).ready(function(){
+        // HTML markup implementation, overlap mode
+        $( '#menu' ).multilevelpushmenu({
+          containersToPush: [$( '#pushobj' )]
+        });
+      });
+      
+      $( '#toggle-button' ).click(function(){
+        var menuExpanded = $( '#menu' ).multilevelpushmenu( 'menuexpanded' , $( '#menu' ).multilevelpushmenu( 'findmenusbytitle' , 'All Categories' ).first() );
+        if( menuExpanded ){
+            $( '#menu' ).multilevelpushmenu( 'collapse' );
+        }
+        else {
+            $( '#menu' ).multilevelpushmenu( 'expand' );
+        }
+      });
+      
+      $('#toggleLink').click(function() {
+        $('.toggledDiv').slideToggle('slow');
+      });
+    </script>
     
   </body>
 </html>

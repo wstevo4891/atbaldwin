@@ -1,5 +1,14 @@
 <div id="login-bar">
-  <% if spree_current_user %>
+  <% if spree_current_user && spree_current_user.admin? %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+        <ul class="dropdown-menu dropdown-normal">
+          <li><%= link_to "Admin", spree.admin_path %></li>
+          <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+          <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+        </ul>
+    </li>
+  <% elsif spree_current_user %>
     <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
     <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
   <% else %>

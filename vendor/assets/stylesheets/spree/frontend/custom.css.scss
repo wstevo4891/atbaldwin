@@ -1,11 +1,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Header */
+
 #spree-header {
   background: white;
   background-size: cover;
   border-bottom: solid 1px #949494;
   margin: 0;
+  height: 12.4em;
+  @media only screen and (max-width: 400px) {
+    height: 10.1em;
+    border: none;
+  }
+  @media only screen
+    and (min-width: 401px)
+    and (max-width: 912px) {
+    height: 11.5em;
+    border: none;
+    }
 
   #header {
     background: white;
@@ -13,9 +26,24 @@
   }
 
   #logo {
+    float: left;
+    margin-left: 2em;
     img {
       width: 15em;
     }
+    @media only screen and (max-width: 912px) {
+      float: none;
+      width: 17em;
+      margin: 0 auto;
+    }
+    @media only screen and (max-width: 400px) {
+      float: none;
+      width: 14em;
+      img {
+        width: 12em;
+      }
+    }
+
   }
 
   .nav a {
@@ -34,6 +62,14 @@
   }
 }
 
+#top-nav-bar {
+  float: right;
+  margin-right: 2em;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
+}
+
 #nav-bar {
   li {
     display: inline-block;
@@ -49,12 +85,23 @@
   }
 }
 
+.nav-con {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 0 auto;
+  padding: 0;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
+}
+
 #mainnav {
-  width: auto;
-  height: 2em;
-  margin-bottom: 1em;
-  margin-left: -6em;
-  margin-right: -5em;
+  width: 100%;
+  height: 3em;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
   li {
     font-size: 1.4em;
     float: left;
@@ -65,13 +112,33 @@
   }
   a {
     display: block;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
     line-height: 1.5em;
     text-decoration: none;
     color: #949494;
     font-family: "Century Gothic";
     height: 1.6em;
+    @media only screen and (max-width: 1260px) {
+      margin-left: 2.5em;
+      margin-right: 2.5em;
+    }
+    @media only screen and (max-width: 1137px) {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    @media only screen and (max-width: 1024px) {
+      margin-left: 1.7em;
+      margin-right: 1.7em;
+    }
+    @media only screen and (max-width: 954px) {
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+    }
+    @media only screen and (max-width: 907px) {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
   }
   a:hover {
     background: white;
@@ -83,9 +150,18 @@
   width: 80%;
   height: 30em;
   position: fixed;
-  top: 13.7em;
+  top: 12.2em;
   margin-right: 10%;
   margin-left: 10%;
+}
+
+.dropdown-normal {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  height: auto;
+  margin: none;
 }
 
 .dropdown-header {
@@ -114,9 +190,120 @@
 
 #main {
   width: 100%;
+  position: relative;
   background: white;
-  height: auto;
-  padding-bottom: 3em;
+}
+
+
+/* Mobile Menu */
+
+body {
+  @media only screen and (max-width: 913px) {
+    margin: 0;
+    padding: 0;
+    background: #336ca6;
+  }
+}
+
+#pushobj {
+  width: 100%;
+  margin: 0 auto;
+  @media only screen and (max-width: 913px) {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: white;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+
+#menu {
+  overflow: scroll;
+  width: 400px;
+  height: 100%;
+  display: inline-block;
+  @media only screen and (min-width: 913px) {
+    display: none;
+  } 
+}
+
+
+/* Mobile Navbar */
+
+.mobile-nav-con {
+  @media only screen and (min-width: 913px) {
+    display: none;
+  }
+}
+
+.mobile-button {
+  display: inline-block;
+  background: #FCBD53;
+  text-align: center;
+  color: black;
+  border: none;
+  margin-top: 0.5em;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  @media only screen and (max-width: 912px) {
+    height: 3em;
+    width: 32%;
+  }
+  @media only screen and (min-width: 936px) {
+    display: none;
+  }
+}
+
+.mb-left {
+  float: left;
+  margin-right: 2%;
+}
+
+.mb-right {
+  float: right;
+  margin-left: 2%;
+}
+
+.toggledDiv {
+  height: 4em;
+  background: white;
+  display: none;
+}
+
+#search-bar {
+  @media only screen and (max-width: 936px) {
+    display: none;
+  }
+}
+
+#mobile-search-categories {
+  width: 30%;
+  margin-left: 1%;
+  display: inline-block;
+  @media only screen and (max-width: 460px) {
+    display: none;
+  }
+}
+
+#mobile-search-bar {
+  width: 51%;
+  display: inline-block;
+  @media only screen and (max-width: 460px) {
+    width: 72%;
+    margin-left: 2%;
+  }
+}
+
+.mobile-search-button {
+  display: inline-block;
+  width: 15%;
+  @media only screen and (max-width: 460px) {
+    width: 22%;
+  }
 }
 
 /* Homepage */
@@ -127,6 +314,32 @@
     width: 100%;
     height: 34em;
   }
+  @media only screen and (max-width: 320px) {
+    img {
+      height: 14em;
+    }
+  }
+  @media only screen
+    and (min-width: 321px)
+    and (max-width: 480px) {
+    img {
+      height: 15em;
+    }
+  }
+  @media only screen
+    and (min-width: 481px)
+    and (max-width: 640px) {
+    img {
+      height: 20em;
+    }
+  }
+  @media only screen
+    and (min-width: 641px)
+    and (max-width: 768px) {
+    img {
+      height: 25em;
+    }
+  }  
 }
 
 #homePage {
@@ -195,15 +408,67 @@
 /* Sidebar */
 
 #sidebar {
+  float: left;
   margin-left: 2em;
   width: 18em;
+  @media only screen and (max-width: 824px) {
+    display: none;
+  }
 }
 
 
 /* Product Display */
 
+#products-display-wrapper {
+  padding-bottom: 3em;
+  margin: 0 auto;
+  @media only screen and (max-width: 550px) {
+    width: 17em;
+  }
+  @media only screen and (min-width: 551px) and (max-width: 660px) {
+    width: 36.5em;
+  }
+  @media only screen and (min-width: 661px) and (max-width: 839px) {
+    padding-left: 10%;
+  }
+}
+
+.subtaxon-title {
+  @media only screen and (max-width: 824px) {
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+
+.taxon-title {
+  @media only screen and (max-width: 824px) {
+    font-size: 1.7em;
+    text-align: center;   
+  }
+}
+
+.no-results-found {
+  @media only screen and (max-width: 824px) {
+    text-align: center;
+  }
+}
+
 .product-list-item {
-  margin-right: 4em;
+  margin-right: 1em;
+  margin-left: 1em;
+  display: inline-block;
+  @media only screen and (min-width: 661px) and (max-width: 824px) {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+  @media only screen and (min-width: 920px) and (max-width: 1180px ) {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+  @media only screen and (min-width: 1230px) {
+    margin-right: 2.5em;
+    margin-left: 2.5em;
+  }
 }
 
 .panel {
@@ -228,6 +493,9 @@
   a {
     display: block;
   }
+  @media only screen and (max-width: 480px) {
+    color: black;
+  }
 }
 
 #main-image {
@@ -242,19 +510,41 @@
 }
 
 
-/* Footer */
+/* Login */
+
+.login-window {
+  width: 20em;
+  height: 30em;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  top: 2em;
+  @media only screen and (min-width: 600px) {
+    width: 25em;
+  }
+  @media only screen and (min-width: 900px) {
+    width: 30em;
+  }
+}
+
+
+/* Footer and Mobile Footer */
 
 footer {
   width: 100%;
   height: 25em;
   border-top: 1px solid #949494;
-  background: white;
+  background: #fff;
   clear: both;
   padding-top: 2em;
   padding-bottom: 2em;
   color: #4D4D4D;
   p {
     font-family: "Century Gothic";
+  }
+  @media only screen and (max-width: 1006px) {
+    padding-top: 1em;
+    height: auto;
   }
 }
 
@@ -278,6 +568,62 @@ footer {
   border-right: solid 1px #949494;
 }
 
+.mobile-footer-contact {
+  width: 100%;
+  border-bottom: solid 1px #949494;
+  height: 4em;
+  display: block;
+  float: left;
+  clear: both;
+  padding-top: 1em;
+  @media only screen and (min-width: 641px) {
+    width: 50%;
+  }
+}
+
+.mobile-footer-phone {
+  width: 100%;
+  border-bottom: solid 1px #949494;
+  height: 4em;
+  display: block;
+  float: left;
+  clear: both;
+  padding-top: 1em;
+  @media only screen and (min-width: 641px) {
+    width: 50%;
+    border-bottom: none;
+  }
+}
+
+.mfc-icon {
+  display: inline-block;
+  margin-right: 1em;
+  line-height: 1em;
+  position: relative;
+  top: -1em;
+}
+
+.mfc-p {
+  display: inline-block;
+  line-height: 1em;  
+}
+
+.mfc-content {
+  height: 4em;
+  width: 13.5em;
+  margin: 0 auto;
+}
+
+.mobile-contact {
+  width: 16em;
+  margin: 0 auto;
+  li {
+    display: inline-block;
+    margin-right: 2em;
+    line-height: 0.5em;
+  }
+}
+
 .social-media {
   width: 40em;
   margin-left: 3em;
@@ -288,6 +634,21 @@ footer {
   img {
     width: 5em;
   }
+  @media only screen and (max-width: 992px) {
+    width: 50%;
+    border-top: none;
+    border-bottom: solid 1px #949494;
+    padding-top: 0;
+    padding-bottom: 1em;
+    margin-left: 0;
+    img {
+      width: 4em;
+      margin-left: 3.5em;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+  }
 }
 
 .footer-about {
@@ -296,15 +657,69 @@ footer {
   float: left;
   display: inline-block;
   margin-top: 0.5em;
+  @media only screen and (max-width: 992px) {
+    width: 50%;
+    height: 4em;
+    border-bottom: solid 1px #949494;
+    line-height: 3.5em;
+    display: block;
+    clear: left;
+  }
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.map-container {
+  width: 100%;
+  height: 25%;
+  display: block;
+  float: left;
+  clear: both;
+  background: white;
+  @media only screen and (min-width: 641px) {
+    height: 25em;
+  }
 }
 
 #map-canvas {
-  width: 400px;
-  height: 300px;
-  background-color: #CCC; 
+  position: relative;
+  padding-bottom: 25%;
+  padding-top: 25px;
+  width: 28em;
+  height: 0;
   float: right;
   margin-bottom: 2em;
   display: inline-block;
+  @media only screen and (min-width: 641px) and (max-width: 992px) {
+    width: 50%;
+    padding-top: 150px;
+    padding-bottom: 163px;
+    margin-top: -18.5em;
+    margin-bottom: 0;
+  }
+  @media only screen and (max-width: 640px) {
+    display: block;
+    float: left;
+    clear: both;
+    margin-top: 2em;
+    margin-left: 4em;
+    margin-left: 12%;
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 50%;
+  }
+  @media only screen and (max-width: 320px) {
+    margin-left: 15%;
+  }
+}
+
+#map-canvas iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #copyright {
@@ -315,12 +730,11 @@ footer {
   border-top: 1px solid #949494;
   text-align: center;
   clear: both;
+  @media only screen and (max-width: 320px) {
+    font-size: 0.8em;
+    p {
+      margin: 0 auto;
+      width: 14em;
+    }
+  }
 }
-
-
-
-
-
-
-
-
