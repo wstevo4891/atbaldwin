@@ -71,3 +71,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+Spree::Core::Engine.add_routes do
+  resources :bridal_registries
+  resources :bridal_products, only: [:create, :update, :destroy]
+  get '/bridal registry' => 'bridal_registries#default', as: 'default_bridal_registry'
+end

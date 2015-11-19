@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="row"><%= Spree.t(:bridal_registries) %></h1>
+  <%= content_tag :ul do %>
+    <% @bridal_registries.each do |br| %>
+      <%= content_tag :li do %>
+        <%= link_to(br.name, br) %> - <%= bridal_registry.is_private ? Spree.t(:private) : Spree.t(:public) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
