@@ -78,6 +78,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :port => 25
+  }
   
   config.action_mailer.default_url_options = { :host => "https://vast-reef-1675.herokuapp.com" }
 end
