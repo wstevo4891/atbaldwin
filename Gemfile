@@ -50,8 +50,8 @@ end
 
 # SPREE GEMS ############
 
-gem 'spree', github: 'spree/spree', branch: '~> 3.1.0.beta'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: '~> 3.1.0.beta'
+gem 'spree', github: 'spree/spree', branch: '~> 3.0.4'
+gem 'spree_gateway', github: 'spree/spree_gateway', branch: '~> 3.0.4'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '~> 3.1.0.beta'
 # gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '~> 3.1.0.beta'
 # gem 'spree_simple_sales', :path => '../spree_simple_sales'
@@ -59,7 +59,7 @@ gem 'spree_slider', github: 'spree-contrib/spree_slider'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content', branch: 'master'
 # gem 'spree_essentials', '~> 0.5.0'
 # gem 'spree_essential_menus', :git => 'git://github.com/matfiz/spree_essential_menus.git'
-gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: 'master'
-gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
+gem 'spree_wishlist', github: 'spree-contrib/spree_wishlist', branch: '~> 3.1.0.beta'
+gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: '~> 3.1.0.beta'
 
 
