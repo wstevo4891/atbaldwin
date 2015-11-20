@@ -490,10 +490,12 @@ ActiveRecord::Schema.define(version: 20150822013557) do
     t.datetime "updated_at",                          null: false
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
+    t.datetime "discontinue_on"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
   add_index "spree_products", ["deleted_at"], name: "index_spree_products_on_deleted_at"
+  add_index "spree_products", ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
   add_index "spree_products", ["name"], name: "index_spree_products_on_name"
   add_index "spree_products", ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
   add_index "spree_products", ["slug"], name: "index_spree_products_on_slug", unique: true
@@ -1076,9 +1078,11 @@ ActiveRecord::Schema.define(version: 20150822013557) do
     t.datetime "updated_at"
     t.integer  "stock_items_count",                          default: 0,     null: false
     t.decimal  "sale_price",        precision: 8,  scale: 2
+    t.datetime "discontinue_on"
   end
 
   add_index "spree_variants", ["deleted_at"], name: "index_spree_variants_on_deleted_at"
+  add_index "spree_variants", ["discontinue_on"], name: "index_spree_variants_on_discontinue_on"
   add_index "spree_variants", ["is_master"], name: "index_spree_variants_on_is_master"
   add_index "spree_variants", ["position"], name: "index_spree_variants_on_position"
   add_index "spree_variants", ["product_id"], name: "index_spree_variants_on_product_id"
