@@ -91,3 +91,5 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { :host => "https://vast-reef-1675.herokuapp.com" }
 end
+
+Spree::Config[:auto_capture] = true
