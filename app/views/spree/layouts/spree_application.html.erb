@@ -31,7 +31,7 @@
         <% end %>
       </div>
 
-      <div id="main">
+      <main>
         <div class="row" data-hook>
           <%= breadcrumbs(@taxon) %>
 
@@ -44,7 +44,7 @@
 
           <%= yield :templates %>
         </div>
-      </div>
+      </main>
     
       <div class="row hidden-xs hidden-sm">
         <%= render 'spree/shared/footer' %>

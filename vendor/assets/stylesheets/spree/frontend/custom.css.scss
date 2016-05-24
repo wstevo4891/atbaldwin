@@ -1,6 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* LAYOUT */
+
+h1 {
+  margin-left: 0.55em;
+}
+
+h1, h4 {
+  color: #337AB7;
+}
+
+/*
+h1 {
+  margin-left: 0.55em;
+  color: #FCBD53;
+  text-shadow:
+   -1px -1px 0 #333,  
+    1px -1px 0 #333,
+    -1px 1px 0 #333,
+     1px 1px 0 #333;
+}
+*/
+
 /* Header */
 
 #spree-header {
@@ -13,9 +35,7 @@
     height: 10.1em;
     border: none;
   }
-  @media only screen
-    and (min-width: 401px)
-    and (max-width: 912px) {
+  @media only screen and (min-width: 401px) and (max-width: 912px) {
     height: 11.5em;
     border: none;
     }
@@ -142,17 +162,22 @@
   }
   a:hover {
     background: white;
-    text-decoration: underline;
+    text-decoration: none;
   }  
+}
+
+.dropdown {
+  position: static;
 }
 
 .dropdown-menu {
   width: 80%;
   height: 30em;
-  position: fixed;
+  position: absolute;
   top: 12.2em;
   margin-right: 10%;
   margin-left: 10%;
+  border: solid 2px #337AB7;
 }
 
 .dropdown-normal {
@@ -182,16 +207,19 @@
   }
 }
 
+#mainnav .nav-categories li a:hover {
+  color: #FCBD53;
+}
+
 .bold {
   a {
     font-weight: bold;
   }
 }
 
-#main {
+main {
   width: 100%;
   position: relative;
-  background: white;
 }
 
 
@@ -363,7 +391,7 @@ body {
 .box {
   width: 23em;
   height: 28em;
-  margin: 0.7em;
+  margin: 1.5em 0.7em;
   img {
     width: 23em;
     height: 22em;
