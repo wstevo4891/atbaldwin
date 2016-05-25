@@ -1,0 +1,18 @@
+
+/* LOGIN STYLES 
+======================================*/
+
+.login-window {
+  width: 20em;
+  height: 30em;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  top: 2em;
+  @media only screen and (min-width: 600px) {
+    width: 25em;
+  }
+  @media only screen and (min-width: 900px) {
+    width: 30em;
+  }
+}

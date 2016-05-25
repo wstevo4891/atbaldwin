@@ -1,0 +1,144 @@
+@import "bootstrap";
+
+/* HEADER STYLES */
+
+#spree-header {
+  background: white;
+  background-size: cover;
+  border-bottom: solid 1px #949494;
+  margin: 0;
+  height: 12.4em;
+  @media only screen and (max-width: 400px) {
+    height: 10.1em;
+    border: none;
+  }
+  @media only screen and (min-width: 401px) and (max-width: 912px) {
+    height: 11.5em;
+    border: none;
+    }
+
+  #header {
+    background: white;
+    padding: $line-height-computed 0;
+  }
+
+  #logo {
+    float: left;
+    margin-left: 2em;
+    img {
+      width: 15em;
+    }
+    @media only screen and (max-width: 912px) {
+      float: none;
+      width: 17em;
+      margin: 0 auto;
+    }
+    @media only screen and (max-width: 400px) {
+      float: none;
+      width: 14em;
+      img {
+        width: 12em;
+      }
+    }
+
+  }
+
+  .nav a {
+    color: #949494;
+    font-family: "Century Gothic";
+    font-size: 1.2em;
+
+    &:hover, &:focus {
+      background: rgba($gray-darker, 0.4);
+    }
+  }
+
+  .navbar {
+    border: 0;
+    margin-bottom: 0;
+  }
+}
+
+#top-nav-bar {
+  float: right;
+  margin-right: 2em;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
+}
+
+#nav-bar {
+  li {
+    display: inline-block;
+  }
+}
+
+#login-bar {
+  float: left;
+  max-width: 8em;
+  a {
+    display: block;
+    margin-top: 0.7em;
+  }
+}
+
+.nav-con {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 0 auto;
+  padding: 0;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
+}
+
+#mainnav {
+  width: 100%;
+  height: 3em;
+  @media only screen and (max-width: 912px) {
+    display: none;
+  }
+  li {
+    font-size: 1.4em;
+    float: left;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: 400;
+    list-style-type: none;
+  }
+  a {
+    display: block;
+    margin-left: 3em;
+    margin-right: 3em;
+    line-height: 1.5em;
+    text-decoration: none;
+    color: #949494;
+    font-family: "Century Gothic";
+    height: 1.6em;
+    @media only screen and (max-width: 1260px) {
+      margin-left: 2.5em;
+      margin-right: 2.5em;
+    }
+    @media only screen and (max-width: 1137px) {
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+    @media only screen and (max-width: 1024px) {
+      margin-left: 1.7em;
+      margin-right: 1.7em;
+    }
+    @media only screen and (max-width: 954px) {
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+    }
+    @media only screen and (max-width: 907px) {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
+  a:hover {
+    background: white;
+    text-decoration: none;
+  }  
+}

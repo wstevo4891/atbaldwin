@@ -1,0 +1,68 @@
+@import "bootstrap";
+
+/* DROPDOWN STYLES 
+=====================================*/
+
+.dropdown {
+  position: static;
+}
+
+.dropdown i {
+  display: none;
+  position: relative;
+  text-align: center;
+  width: 25px;
+  margin: 0 auto;
+  color: #337AB7;
+  background-color: white;
+  font-size: 2em;
+  bottom: 11px;
+  z-index: 15;
+}
+
+.dropdown-menu {
+  width: 80%;
+  height: 30em;
+  position: absolute;
+  top: 12.2em;
+  margin-right: 10%;
+  margin-left: 10%;
+  border: solid 2px #337AB7;
+}
+
+.dropdown-normal {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  height: auto;
+  margin: none;
+}
+
+.dropdown-header {
+  margin-left: -1em;
+  font-weight: bold;
+}
+
+.nav-categories {
+  margin-top: 0.5em;
+  li {
+    float: left;
+    display: block;
+    clear: left;
+    margin-bottom: 0.5em;
+  }
+  a {
+    font-size: 0.8em;
+  }
+}
+
+#mainnav .nav-categories li a:hover {
+  color: #FCBD53;
+}
+
+.bold {
+  a {
+    font-weight: bold;
+  }
+}

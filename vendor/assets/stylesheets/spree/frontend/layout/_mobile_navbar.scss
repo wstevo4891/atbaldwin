@@ -1,0 +1,79 @@
+
+/* MOBILE NAVBAR STYLES 
+========================================*/
+
+@import "bootstrap-sprockets";
+
+.mobile-nav-con {
+  @media only screen and (min-width: 913px) {
+    display: none;
+  }
+}
+
+.mobile-button {
+  display: inline-block;
+  background: #FCBD53;
+  text-align: center;
+  color: black;
+  border: none;
+  margin-top: 0.5em;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  @media only screen and (max-width: 912px) {
+    height: 3em;
+    width: 32%;
+  }
+  @media only screen and (min-width: 936px) {
+    display: none;
+  }
+}
+
+.mb-left {
+  float: left;
+  margin-right: 2%;
+}
+
+.mb-right {
+  float: right;
+  margin-left: 2%;
+}
+
+.toggledDiv {
+  height: 4em;
+  background: white;
+  display: none;
+}
+
+#search-bar {
+  @media only screen and (max-width: 936px) {
+    display: none;
+  }
+}
+
+#mobile-search-categories {
+  width: 30%;
+  margin-left: 1%;
+  display: inline-block;
+  @media only screen and (max-width: 460px) {
+    display: none;
+  }
+}
+
+#mobile-search-bar {
+  width: 51%;
+  display: inline-block;
+  @media only screen and (max-width: 460px) {
+    width: 72%;
+    margin-left: 2%;
+  }
+}
+
+.mobile-search-button {
+  display: inline-block;
+  width: 15%;
+  @media only screen and (max-width: 460px) {
+    width: 22%;
+  }
+}

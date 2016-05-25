@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* LAYOUT */
+/* SITE-WIDE LAYOUT */
 
 h1 {
   margin-left: 0.55em;
@@ -9,6 +9,11 @@ h1 {
 
 h1, h4 {
   color: #337AB7;
+}
+
+main {
+  width: 100%;
+  position: relative;
 }
 
 /*
@@ -23,7 +28,7 @@ h1 {
 }
 */
 
-/* Header */
+/* HEADER STYLES */
 
 #spree-header {
   background: white;
@@ -166,8 +171,23 @@ h1 {
   }  
 }
 
+/* DROPDOWN STYLES */
+
 .dropdown {
   position: static;
+}
+
+.dropdown i {
+  display: none;
+  position: relative;
+  text-align: center;
+  width: 25px;
+  margin: 0 auto;
+  color: #337AB7;
+  background-color: white;
+  font-size: 2em;
+  bottom: 11px;
+  z-index: 15;
 }
 
 .dropdown-menu {
@@ -217,13 +237,9 @@ h1 {
   }
 }
 
-main {
-  width: 100%;
-  position: relative;
-}
 
-
-/* Mobile Menu */
+/* MOBILE MENU STYLES 
+=======================================*/
 
 body {
   @media only screen and (max-width: 913px) {
@@ -371,7 +387,7 @@ body {
 }
 
 #homePage {
-  background: #f8f8f8;
+  background: #f2EFED;
   width: 100%;
   height: auto;
   padding-top: 0.5em;

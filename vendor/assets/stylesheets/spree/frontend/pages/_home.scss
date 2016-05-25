@@ -1,0 +1,94 @@
+
+/* HOME PAGE STYLES 
+========================================*/
+
+#home-image {
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 34em;
+  }
+  @media only screen and (max-width: 320px) {
+    img {
+      height: 14em;
+    }
+  }
+  @media only screen and (min-width: 321px) and (max-width: 480px) {
+    img {
+      height: 15em;
+    }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 640px) {
+    img {
+      height: 20em;
+    }
+  }
+  @media only screen and (min-width: 641px) and (max-width: 768px) {
+    img {
+      height: 25em;
+    }
+  }  
+}
+
+#homePage {
+  background: #f2EFED;
+  width: 100%;
+  height: auto;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  p {
+    font-size: 1.3em;
+    padding-top: 1em;
+  }
+}
+
+#hp-contain {
+  width: 75em;
+  margin: 0 auto;
+  height: auto;
+}
+
+.box {
+  width: 23em;
+  height: 28em;
+  margin: 1.5em 0.7em;
+  img {
+    width: 23em;
+    height: 22em;
+  }
+}
+
+.box2 {
+  width: 72em;
+  height: 28em;
+  margin: 0.7em;
+  img {
+    width: 72em;
+    height: 28em;
+  }
+}
+
+.productTag {
+  height: 6em;
+  width: 23em;
+  background: #FCBD53;
+  text-align: center;
+}
+
+.tagCopy1 {
+  font-size: 2.5em;
+  margin: 0 auto;
+  padding-top: 0.2em;
+}
+
+.tagCopy2 {
+  margin-top: -0.7em;
+}
+
+.font-1 {
+  font-family: "Bodoni";
+}
+
+.font-2 {
+  font-family: "Century Gothic"
+}

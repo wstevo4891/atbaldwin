@@ -1,0 +1,36 @@
+
+/* SITE-WIDE LAYOUT 
+========================================*/
+
+body {
+  @media only screen and (max-width: 913px) {
+    margin: 0;
+    padding: 0;
+    background: #336ca6;
+  }
+}
+
+h1 {
+  margin-left: 0.55em;
+}
+
+h1, h4 {
+  color: #337AB7;
+}
+
+main {
+  width: 100%;
+  position: relative;
+}
+
+/*
+h1 {
+  margin-left: 0.55em;
+  color: #FCBD53;
+  text-shadow:
+   -1px -1px 0 #333,  
+    1px -1px 0 #333,
+    -1px 1px 0 #333,
+     1px 1px 0 #333;
+}
+*/
