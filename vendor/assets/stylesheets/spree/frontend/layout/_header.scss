@@ -1,6 +1,8 @@
-@import "bootstrap";
 
-/* HEADER STYLES */
+/* HEADER STYLES 
+======================================*/
+
+@import "bootstrap";
 
 #spree-header {
   background: white;
@@ -82,7 +84,7 @@
   }
 }
 
-.nav-con {
+.nav-container {
   width: 100%;
   float: left;
   clear: both;
