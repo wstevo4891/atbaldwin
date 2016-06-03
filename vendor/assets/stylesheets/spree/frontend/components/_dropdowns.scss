@@ -50,9 +50,11 @@
     display: block;
     clear: left;
     margin-bottom: 0.5em;
+
   }
   a {
     font-size: 0.8em;
+    @include transition(all 0.3s ease);
   }
 }
 

@@ -2,8 +2,8 @@
 /* ALL IMPORTS 
 ================================*/
 
-@import "bootstrap";
 @import "bootstrap-sprockets";
+@import "bootstrap";
 
 @import "layout/body";
 @import "layout/header";
@@ -14,6 +14,8 @@
 
 @import "components/dropdowns";
 @import "components/bridal_registry";
+
+@import "helpers/mixins";
 
 @import "pages/home";
 @import "pages/login";

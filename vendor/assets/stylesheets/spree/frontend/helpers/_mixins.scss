@@ -1,0 +1,21 @@
+
+/* APPLICATION MIXINS 
+====================================*/
+
+// TRANSITION ###########
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+@mixin transition-delay($str) {
+	-webkit-transition-delay: $str;
+	-moz-transition-delay: $str;
+	-ms-transition-delay: $str;
+	-o-transition-delay: $str;
+	transition-delay: $str;
+}
